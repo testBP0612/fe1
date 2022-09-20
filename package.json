@@ -1,19 +1,36 @@
 {
-  "name": "fe1",
+  "name": "npm-bloop-test",
   "version": "0.1.0",
-  "private": true,
+  "description": "Test React components",
+  "author": "Bloop",
+  "keywords": [
+    "react",
+    "components",
+    "ui"
+  ],
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -rf dist && NODE_ENV=production babel lib --out-dir dist --copy-files",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.1",
+    "@babel/preset-env": "^7.19.1",
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
